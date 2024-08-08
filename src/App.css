@@ -114,9 +114,10 @@
     line-height: 1;
     margin: 0;
   }
-  /* .result-container {
+
+  .result-container {
     margin-right: 20px;
-  } */
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -127,7 +128,5 @@
     padding-right: 20px;
   }
 
-  .result-container {
-    margin-right: 20px;
-  }
+  
 }
