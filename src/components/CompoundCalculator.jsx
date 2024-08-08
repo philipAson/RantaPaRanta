@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { LineChart, Line, YAxis, Tooltip } from "recharts";
+import { LineChart, Line, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import CompoundInput from "./CompoundInput";
 
 const CompoundCalculator = () => {
@@ -52,7 +52,8 @@ const CompoundCalculator = () => {
         </p>
       </div>
       <div className="calc-graph">
-        <LineChart width={500} height={295} data={data}>
+        <ResponsiveContainer width="80%" height={290}>
+        <LineChart className="chart" width={500} height={295} data={data}>
           <Line
             type="monotone"
             dataKey="BELOPP"
@@ -91,6 +92,7 @@ const CompoundCalculator = () => {
             }}
           />
         </LineChart>
+        </ResponsiveContainer>
       </div>
       <div className="calc-input">
       <CompoundInput

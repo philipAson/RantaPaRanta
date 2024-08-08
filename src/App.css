@@ -104,4 +104,11 @@
     grid-column: 1 / span 2;
     justify-content: space-evenly;
   }
+  .result {
+    font-family: "bebas-neue-pro", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1;
+    margin: 0;
+  }
 }
