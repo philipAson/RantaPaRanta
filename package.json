@@ -2,7 +2,7 @@
   "name": "ranta-pa-ranta",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://philipAson.github.io/ranta-pa-ranta",
+  "homepage": "https://philipAson.github.io/RantaPaRanta",
   "type": "module",
   "scripts": {
     "dev": "vite",
