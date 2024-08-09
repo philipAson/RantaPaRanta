@@ -118,11 +118,12 @@
     grid-row: 3;
     grid-column: 1 / span 2;
     justify-content: space-evenly;
+    gap: 10px;
   }
   .result {
     font-family: "bebas-neue-pro", sans-serif;
-    font-weight: 600;
-    font-size: 25px;
+    font-weight: 300;
+    font-size: 28px;
     line-height: 1;
     margin: 0;
     margin-bottom: 10px;
