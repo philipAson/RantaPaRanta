@@ -52,93 +52,93 @@ const CompoundCalculator = () => {
         </p>
       </div>
       <div className="calc-graph">
-        <ResponsiveContainer width="80%" height={290}>
-        <LineChart className="chart" width={500} height={295} data={data}>
-          <Line
-            type="monotone"
-            dataKey="BELOPP"
-            stroke="#ffffff"
-            strokeWidth={1}
-          />
-          <YAxis
-            width={90}
-            tick={{ fill: "#ffffff" }}
-            type={"number"}
-            tickFormatter={(value) =>
-              value < 999999
-                ? Math.round(value / 1000).toLocaleString() + " TKR"
-                : (value / 1000000).toFixed(2).toLocaleString() + " MKR"
-            }
-            tickMargin={10}
-            fontFamily="bebas-neue-pro"
-            fontWeight={400}
-          />
-          <Tooltip
-            formatter={(value) =>
-              value < 999999
-                ? Math.round(value / 1000).toLocaleString() + " TKR"
-                : (value / 1000000).toFixed(2).toLocaleString() + " MKR"
-            }
-            labelFormatter={(value) => "ÅR " + value}
-            contentStyle={{
-              backgroundColor: "#fffffff, 0.8",
-              color: "#ffffff",
-              border: "none",
-              borderRadius: 7,
-              textAlign: "left",
-              fontFamily: "bebas-neue-pro",
-              fontSize: 14,
-              fontWeight: 300,
-            }}
-          />
-        </LineChart>
+        <ResponsiveContainer className="responsive-chart">
+          <LineChart className="chart" data={data}>
+            <Line
+              type="monotone"
+              dataKey="BELOPP"
+              stroke="#ffffff"
+              strokeWidth={1}
+            />
+            <YAxis
+              width={90}
+              tick={{ fill: "#ffffff" }}
+              type={"number"}
+              tickFormatter={(value) =>
+                value < 999999
+                  ? Math.round(value / 1000).toLocaleString() + " TKR"
+                  : (value / 1000000).toFixed(2).toLocaleString() + " MKR"
+              }
+              tickMargin={10}
+              fontFamily="bebas-neue-pro"
+              fontWeight={400}
+            />
+            <Tooltip
+              formatter={(value) =>
+                value < 999999
+                  ? Math.round(value / 1000).toLocaleString() + " TKR"
+                  : (value / 1000000).toFixed(2).toLocaleString() + " MKR"
+              }
+              labelFormatter={(value) => "ÅR " + value}
+              contentStyle={{
+                backgroundColor: "#fffffff, 0.8",
+                color: "#ffffff",
+                border: "none",
+                borderRadius: 7,
+                textAlign: "left",
+                fontFamily: "bebas-neue-pro",
+                fontSize: 14,
+                fontWeight: 300,
+              }}
+            />
+          </LineChart>
         </ResponsiveContainer>
       </div>
       <div className="calc-input">
-      <CompoundInput
-                  getter={rate}
-                  setter={setRate}
-                  handleSlider={handleSliderChange}
-                  handleInput={handleInputChange}
-                  title="Ränta per år"
-                  min={1}
-                  max={100}
-                  step={1}
-                  unit="%"
-                />
-                <CompoundInput
-                  getter={principal}
-                  setter={setPrincipal}
-                  handleSlider={handleSliderChange}
-                  handleInput={handleInputChange}
-                  title="Startkapital"
-                  min={1000}
-                  max={100000}
-                  step={500}
-                  unit="kr"
-                />
-                <CompoundInput
-                  getter={inputMonthly}
-                  setter={setInputMonthly}
-                  handleSlider={handleSliderChange}
-                  handleInput={handleInputChange}
-                  title="Månadssparande"
-                  min={100}
-                  max={20000}
-                  step={100}
-                  unit="kr"
-                />
-                <CompoundInput
-                  getter={timePeriod}
-                  setter={setTimePeriod}
-                  handleSlider={handleSliderChange}
-                  handleInput={handleInputChange}
-                  title="Tidsperiod"
-                  min={1}
-                  max={50}
-                  step={1}
-                  unit="år"
-                />
+        <CompoundInput
+          getter={rate}
+          setter={setRate}
+          handleSlider={handleSliderChange}
+          handleInput={handleInputChange}
+          title="Ränta per år"
+          min={1}
+          max={100}
+          step={1}
+          unit="%"
+        />
+        <CompoundInput
+          getter={principal}
+          setter={setPrincipal}
+          handleSlider={handleSliderChange}
+          handleInput={handleInputChange}
+          title="Startkapital"
+          min={1000}
+          max={100000}
+          step={500}
+          unit="kr"
+        />
+        <CompoundInput
+          getter={inputMonthly}
+          setter={setInputMonthly}
+          handleSlider={handleSliderChange}
+          handleInput={handleInputChange}
+          title="Månadssparande"
+          min={100}
+          max={20000}
+          step={100}
+          unit="kr"
+        />
+        <CompoundInput
+          getter={timePeriod}
+          setter={setTimePeriod}
+          handleSlider={handleSliderChange}
+          handleInput={handleInputChange}
+          title="Tidsperiod"
+          min={1}
+          max={50}
+          step={1}
+          unit="år"
+        />
       </div>
       <div className="calc-result">
         <p className="result-container">
