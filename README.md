@@ -13,11 +13,20 @@ After cloning repo run following in terminal:
     npm install
     npm run dev 
 
-Then remove ... from ... and run:
-    npm uninstall ...
+Then remove these lines from package.json:
+    "homepage": "https://philipason.github.io/ranta-pa-ranta",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+
+And run:
+    npm uninstall gh-pages
 in terminal.
 
+# CMS implementations
 
+    * Replace font API's in App.css to the ones that is used in your project.
+
+    * Some modifications to both index.css and App.css may be needed.
 
 # Styles
 
