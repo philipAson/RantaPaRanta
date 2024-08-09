@@ -93,7 +93,7 @@ const CompoundCalculator = () => {
             />
           </LineChart>
         </ResponsiveContainer>
-      </div>
+      </div>      
       <div className="calc-input">
         <CompoundInput
           getter={rate}
@@ -143,15 +143,16 @@ const CompoundCalculator = () => {
       <div className="calc-result">
         <p className="result-container">
           SLUTVÄRDE ÅR {timePeriod} <br />
-          <p className="result">{result.slutvärde?.toLocaleString()} kr</p>
+          <p className="result">{result.slutvärde > 999999 ? (result.slutvärde / 1000000)?.toLocaleString() + " MKR" : result.slutvärde?.toLocaleString() + " KR"}</p>
+          {/* <p className="result">{result.slutvärde?.toLocaleString()} kr</p> */}
         </p>
         <p className="result-container">
           INTJÄNAD RÄNTA <br />
-          <p className="result">{result.intjänadRänta?.toLocaleString()} kr</p>
+          <p className="result">{result.intjänadRänta > 999999 ? (result.intjänadRänta / 1000000)?.toLocaleString() + " MKR" : result.intjänadRänta?.toLocaleString() + " KR"}</p>
         </p>
         <p className="result-container">
           TOTALT SPARANDE <br />
-          <p className="result">{result.totaltSparande?.toLocaleString()} kr</p>
+          <p className="result">{result.totaltSparande > 999999 ? (result.totaltSparande / 1000000)?.toLocaleString() + " MKR" : result.totaltSparande?.toLocaleString() + " KR"}</p>
         </p>
       </div>
     </div>
