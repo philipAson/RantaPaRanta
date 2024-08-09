@@ -144,7 +144,6 @@ const CompoundCalculator = () => {
         <p className="result-container">
           SLUTVÄRDE ÅR {timePeriod} <br />
           <p className="result">{result.slutvärde > 999999 ? (result.slutvärde / 1000000)?.toLocaleString() + " MKR" : result.slutvärde?.toLocaleString() + " KR"}</p>
-          {/* <p className="result">{result.slutvärde?.toLocaleString()} kr</p> */}
         </p>
         <p className="result-container">
           INTJÄNAD RÄNTA <br />
