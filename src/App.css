@@ -80,6 +80,11 @@
   margin: 0;
 }
 
+.disclaimer {
+  text-align: left;
+  font-size: 11px;
+  color: #ffffff;
+}
 @media only screen and (max-width: 1300px) {
   .calc-body {
     grid-template-columns: 2fr 1fr;

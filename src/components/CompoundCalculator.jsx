@@ -46,9 +46,9 @@ const CompoundCalculator = () => {
       <div className="calc-header">
         <p>
           Vår ränta på ränta-kalkylator hjälper dig att beräkna hur mycket ditt
-          sparande kan växa över tid. Du kan justera räntan, startkapitalet,
-          månadssparandet och tidsperioden för att se hur ditt sparande kan
-          växa.
+          sparande kan växa över tid. Du kan justera avkastningen,
+          startkapitalet, månadssparandet och tidsperioden för att se vilken
+          effekt det har på ditt sparande.
         </p>
       </div>
       <div className="calc-graph">
@@ -101,7 +101,7 @@ const CompoundCalculator = () => {
           setter={setRate}
           handleSlider={handleSliderChange}
           handleInput={handleInputChange}
-          title="Ränta per år"
+          title="Avkastning per år"
           min={1}
           max={50}
           step={1}
@@ -151,7 +151,7 @@ const CompoundCalculator = () => {
           </p>
         </p>
         <p className="result-container">
-          INTJÄNAD RÄNTA <br />
+          FÖRVÄNTAD AVKASTNING <br />
           <p className="result">
             {result.intjänadRänta > 999999
               ? (result.intjänadRänta / 1000000)?.toLocaleString() + " MKR"
@@ -166,6 +166,9 @@ const CompoundCalculator = () => {
               : result.totaltSparande?.toLocaleString() + " KR"}
           </p>
         </p>
+      </div>
+      <div className="disclaimer">
+        Hänsyn har inte tagits till eventuella skatter eller inflation.
       </div>
     </div>
   );
