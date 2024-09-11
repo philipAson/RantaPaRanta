@@ -18,7 +18,7 @@ const CompoundInput = ({
         id="input-slider"
         sx={{ color: "#ffffff", textAlign: "left", gridRow: "1"}}
         fontFamily={"bebas-neue-pro"}
-        fontSize={14}
+        fontSize={18}
         textTransform={"uppercase"}
         fontWeight={"thin"}
         gutterBottom
@@ -39,11 +39,16 @@ const CompoundInput = ({
       <Input
         sx={{
           color: "#ffffff",
+          backgroundColor: "#152450",
+          borderRadius: 2,
+          padding: .5,
+          paddingLeft: 1.5,
           marginBottom: 3,
-          marginLeft: 2,
-          width: 70,
+          marginLeft: 5,
+          width: 90,
           fontFamily: "bebas-neue-pro",
           gridRow: "2",
+          fontSize: 18,
         }}
         value={getter || ""}
         size="small"
