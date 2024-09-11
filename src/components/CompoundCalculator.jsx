@@ -13,26 +13,33 @@ const CompoundCalculator = () => {
   useEffect(() => {
     let result = principal;
     const newData = [{ BELOPP: result, år: 0 }];
+    
     for (let i = 0; i < timePeriod; i++) {
-      result = (result + inputMonthly * 12) * (1 + rate / 100);
-      result = Math.round(result);
+      // Applicera ränta på huvudbeloppet först
+      result = result * (1 + (rate / 100));
+  
+      // Hantera månadssparande
+      for (let j = 0; j < 12; j++) {
+        // Varje månadssparande får ränta för det antal månader som är kvar av året
+        result += inputMonthly * Math.pow(1 + rate / 100, (12 - j) / 12);
+      }  
       newData.push({ BELOPP: result, år: i + 1 });
     }
+  
     const slutvärde = newData[newData.length - 1].BELOPP;
-    const totaltSparande = principal + inputMonthly * 12 * timePeriod;
+    const totaltSparande = principal + (inputMonthly * 12) * timePeriod;
     const intjänadRänta = slutvärde - totaltSparande;
-
+  
     const newResult = {
-      intjänadRänta: intjänadRänta,
-      totaltSparande: totaltSparande,
-      slutvärde: slutvärde,
+      intjänadRänta: Math.round(intjänadRänta),
+      totaltSparande: Math.round(totaltSparande),
+      slutvärde: Math.round(slutvärde),
     };
-
+  
     console.log(newResult.intjänadRänta);
     setResult(newResult);
     setData(newData);
   }, [principal, rate, timePeriod, inputMonthly]);
-
   const handleSliderChange = (setter) => (event, newValue) => {
     setter(newValue);
   };
