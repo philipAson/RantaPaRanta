@@ -18,7 +18,7 @@ const CompoundInput = ({
         id="input-slider"
         sx={{ color: "#ffffff", textAlign: "left", gridRow: "1"}}
         fontFamily={"bebas-neue-pro"}
-        fontSize={18}
+        fontSize={14}
         textTransform={"uppercase"}
         fontWeight={"thin"}
         gutterBottom
