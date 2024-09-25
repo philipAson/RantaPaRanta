@@ -17,9 +17,8 @@ const CompoundInput = ({
       <Typography
         id="input-slider"
         sx={{ color: "#ffffff", textAlign: "left", gridRow: "1"}}
-        fontFamily={"bebas-neue-pro"}
+        fontFamily={"Raleway, sans-serif"}
         fontSize={14}
-        textTransform={"uppercase"}
         fontWeight={"thin"}
         gutterBottom
         marginBottom={0}

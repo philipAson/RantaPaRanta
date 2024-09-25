@@ -15,12 +15,9 @@ const CompoundCalculator = () => {
     const newData = [{ BELOPP: result, år: 0 }];
     
     for (let i = 0; i < timePeriod; i++) {
-      // Applicera ränta på huvudbeloppet först
       result = result * (1 + (rate / 100));
-  
-      // Hantera månadssparande
+
       for (let j = 0; j < 12; j++) {
-        // Varje månadssparande får ränta för det antal månader som är kvar av året
         result += inputMonthly * Math.pow(1 + rate / 100, (12 - j) / 12);
       }  
       newData.push({ BELOPP: result, år: i + 1 });
@@ -51,7 +48,7 @@ const CompoundCalculator = () => {
   return (
     <div className="calc-body">
       <div className="calc-header">
-        <p>
+        <p style={{lineHeight: 1.68}}>
           Vår ränta på ränta-kalkylator hjälper dig att beräkna hur mycket ditt
           sparande kan växa över tid. Du kan justera avkastningen,
           startkapitalet, månadssparandet och tidsperioden för att se vilken
@@ -152,13 +149,13 @@ const CompoundCalculator = () => {
         <p className="result-container">
           SLUTVÄRDE ÅR {timePeriod} <br />
           <p className="result">
-            {result.slutvärde?.toLocaleString() + " KR"}
+            {result.slutvärde?.toLocaleString('sv-SE') + " KR"}
           </p>
         </p>
         <p className="result-container">
           FÖRVÄNTAD AVKASTNING <br />
           <p className="result">
-            {result.intjänadRänta?.toLocaleString() + " KR"}
+            {result.intjänadRänta?.toLocaleString('sv-SE') + " KR"}
           </p>
         </p>
         <p className="result-container">
