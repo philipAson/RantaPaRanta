@@ -161,7 +161,7 @@ const CompoundCalculator = () => {
         <p className="result-container">
           TOTALT SPARANDE <br />
           <p className="result">
-            {result.totaltSparande?.toLocaleString() + " KR"}
+            {result.totaltSparande?.toLocaleString('sv-SE') + " KR"}
           </p>
         </p>
       </div>
